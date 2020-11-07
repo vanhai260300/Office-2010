@@ -1,0 +1,71 @@
+<html dir="ltr"><head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-us"><META HTTP-EQUIV="assetid" CONTENT="HR01048405"><title>Microsoft Office Access 2003 Readme File</title></head><body><h1>Microsoft Office Access 2003 Readme File</h1><META HTTP-EQUIV="assetid" CONTENT="HR01048405"><title>Microsoft Office Access 2003 Readme File</title>
+
+<style>
+<!--
+	h1	{font-size: 140%; margin-top: .4em;}
+	h2	{font-size: 120%; margin-top: .2em;}
+	h3	{font-size: 100%; margin-top: .2em; font-weight: bold;}
+	h4	{font-size: 100%; margin-top: .2em; font-weight: bold;}
+	h5	{font-size: 100%; margin-top: .2em; font-weight: bold;}
+	body	{bgcolor: #ffffff; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 80%; }
+	p	{font-size: 100%; margin-left: 2em;}
+	pre	{font-size: 100%; margin-left: 2em;}
+	ol	{font-size: 100%; margin-top: .5em; margin-left: 4em;}
+	ul	{font-size: 100%; margin-top: .5em;; margin-left: 4em;}
+	li	{margin-bottom: .7em; margin-left: 0em;}
+	table	{font-size: 100%; margin-top: 1em; margin-left: 2em;}
+	th	{text-align: left; background: #CCCCCC; margin: .25em; vertical-align: bottom;}
+	tr	{vertical-align: top;}
+	td	{margin: .25em; vertical-align: top; border-bottom: 1px solid #CCCCCC; }
+
+	
+-->
+</style>
+
+
+
+
+<h3>© 2003 Microsoft Corporation.  All rights reserved.</h3>
+<p>This document provides late-breaking information about  Microsoft Office Access 2003.</p>
+<h3>How to use this document</h3>
+<p>To view the Readme file on the screen, maximize the
+browser window. To print the Readme file, click the <b class="bterm">Print</b> button on the toolbar.</p>
+<hr>
+<h2>Contents</h2>
+
+<h3>Installation issues</h3><p><a href="#MSDE">Microsoft SQL Server 2000 Desktop Engine Service Pack 3 is included with Access 2003</a></p><p><a href="#jet">Updated version of Microsoft Jet 4.0 required to block unsafe expressions</a></p><h3>Converting to Microsoft Office Access 2003</h3><p><a href="#Convert">Converting previous-version data access pages</a></p><p><a href="#RollBack">Using Microsoft Office Web Components with Access 2003</a></p><p><a href="#Depend">Viewing dependency information</a></p><h5> 
+
+
+
+Security</h5><p><a href="#wizard">Wizards are not available if <b class="bterm">Trust all installed add-ins and templates</b> is disabled</a></p><p><a href="#digisign">Database digitally signed with a beta version of Access appears to be unsigned</a>
+
+ 
+</p><p><a href="#Dir">The Dir function is blocked in sandbox mode</a></p><h3>Exporting, importing, and linking to data</h3><p><a href="#Link">
+
+Linking to a SharePoint site</a></p><h3>Using smart tags and themes</h3><p><a href="#AddSmartTag">Adding a smart tag to a table or view in an Access project</a></p><p><a href="#SelectSmartTag">Selecting a smart tag from the <b class="ui">Smart Tag</b> property builder</a></p><p><a href="#ThemeReq">
+
+
+Requirements for applying a theme to a form
+</a></p><p><a href="#TurnOff">Theming for forms is turned off in previous-version databases</a></p><hr><h2>Installation issues</h2><h3><a id="MSDE" name="MSDE">Microsoft SQL Server 2000 Desktop Engine Service Pack 3 is included with Access 2003</a></h3><p>You have the right to install Microsoft SQL Server 2000 Desktop Engine (MSDE 2000), which is located in the \MSDE2000 folder, for use under the terms of the End User License Agreement for this product.</p><p>For more information about possible updates to MSDE 2000, go to <a href="http://www.microsoft.com/technet/security/current.asp">http://www.microsoft.com/technet/security/current.asp</a>
+
+ and search for security bulletins associated with MSDE 2000. To search for security bulletins associated with MSDE 2000, in the <b class="ui">Product/Technology</b> list box, select <b class="ui">SQL Server Desktop Engine (MSDE) 2000</b>. In the <b class="ui">Service Pack</b> list box, select <b class="ui">SQL Server Desktop Engine (MSDE) 2000 SP3</b>, and click <b class="ui">Go</b>.
+
+</p><p>To install SQL Server 2000 Desktop Engine, double-click the MSDE2KS3.EXE self-extracting program in the \MSDE2000 folder on your Office 2003 or Access 2003 CD. By default, the files will be extracted to the c:\sql2ksp3 folder. You can specify another location, but the following instructions are based on this default location.</p><p>You must install MSDE 2000 from the command prompt with command-line options that differ depending on whether you are installing MSDE 2000 for the first time or upgrading an earlier version of MSDE 2000.</p><p><b class="bterm">New installation</b></p><p>On the Windows <b class="ui">Start</b> menu, click <b class="ui">Run</b>, type <b class="ui">cmd</b>, and then press ENTER. The command prompt appears. Type the following commands:</p><pre><code>cd \sql2ksp3\msde
+setup.exe SAPWD="<i>AStrongSAPwd</i>"</code></pre><p>Replace <code>"<i>AStrongSAPwd</i>"</code>  with your own strong password for the <b class="bterm">sa</b> logon account.</p><p><b class="bterm">Upgrading from SQL Server 2000 Desktop Engine to Service Pack 3</b></p><p>On the Windows <b class="bterm">Start</b> menu, click <b class="bterm">Run</b>, type <b class="bterm">cmd</b>, and then press ENTER. The  command prompt appears. Type the following commands:</p><pre><code>cd \sql2ksp3\msde
+setup.exe /upgradesp setup\sqlrun01.msi SAPWD="<i>AStrongSAPwd</i>"</code></pre><p>Replace <code>"<i>AStrongSAPwd</i>"</code>  with your own strong password for the <b class="bterm">sa</b> logon account.</p><p><b class="bterm">More information</b></p><p>For more information about installing SQL Server 2000 Desktop Engine, see the Sp3readme.htm file in the folder containing the extracted the MSDE 2000 files (c:\sql2ksp3\MSDE by default).</p><p><b class="bterm">Clean up</b></p><p>When the installation or upgrade is complete, you can delete the c:\sql2ksp3 folder.</p><h3><a id="jet" name="jet">Updated version of Microsoft Jet 4.0 required to block unsafe expressions</a></h3><p>To block unsafe expressions in Access 2003, you must download the latest version of Microsoft Jet 4.0 from <a href="http://windowsupdate.microsoft.com">http://windowsupdate.microsoft.com</a>.  Microsoft Jet 4.0 Service Pack 8 (SP8) allows Access 2003 to be fully functional yet still have Jet block unsafe expressions by enabling sandbox mode.  If sandbox mode is not enabled and macro security is set to <b class="bterm">Medium</b> or <b class="bterm">High</b>, you will see a security warning every time you open a file.</p><h2>Converting to Microsoft Office Access 2003</h2><h3><a id="convert" name="convert">Converting previous-version data access pages
+</a></h3><p>To convert a data access page that was created using Access 2000, you must have the Microsoft Office 2000 Web Components installed on your computer. The Microsoft Office 2000 Web Components are included with Microsoft Office 2000 and Microsoft Office XP.</p><p>A data access page created by using Access 2002 does not need to be converted before it is used with Microsoft Office Access 2003. Access 2003 uses the Microsoft Office XP Web Components, which is the same version as those used in Access 2002.</p><h3><a id="rollback" name="rollback">Using Microsoft Office Web Components with Access 2003</a></h3><p>Access 2003 uses the Office XP Web Components instead of the Office 2003 Web Components. If you created a data access page or an application with Web Components using Access 2003 Beta, you will need to modify the page or the application code to revert to the previous version of the Web Components.</p><p>To revert from Office 2003 Web Components to the Office XP Web Components, you need to change the GUIDs of the components to reference the Office XP version in the page or code. The following table lists the GUIDs for both versions of the components.</p><table><tr><th>Component</th><th>Office 2003 Web Components GUIDs</th><th>Office XP Web Components GUIDs</th><th>Comments</th></tr><tr><td>MSODSC </td><td>CLSID:0002E55B-0000-0000-C000-000000000046    </td><td>CLSID:0002E553-0000-0000-C000-000000000046         </td><td>B has been changed to 3.</td></tr><tr><td>PivotTable list</td><td>CLSID:0002E55A-0000-0000-C000-000000000046      </td><td>CLSID:0002E552-0000-0000-C000-000000000046            </td><td>A has been changed to 2.</td></tr><tr><td>Chart</td><td>CLSID:0002E55D-0000-0000-C000-000000000046</td><td>CLSID:0002E556-0000-0000-C000-000000000046</td><td>D has been changed to 6.</td></tr></table><p><b>Note</b>  You do not need to change the GUID of the Spreadsheet component.</p><h3><a id="depend" name="depend">Viewing dependency information</a></h3><p>In Access 2003, you can view a list of objects that use or are being used by the selected object. This feature helps you understand the design of the database and maintain it. The dependency information is generated by reading the name maps created by the <b class="ui">Track name AutoCorrect info</b> feature. Note that the <b class="ui">Perform name AutoCorrect</b> feature need not be enabled to view dependency information.
+
+</p><p>The name maps created in Access 2002 and previous versions do not contain all the information needed to track dependencies accurately. If you open a previous-version database in Access 2003 and attempt to view dependency information, you will be asked whether you want to update the dependency information. Choose to update the name maps if you want to view dependency information.</p><h2>Security</h2><h3><a id="wizard" name="wizard">Wizards are not available if "Trust all installed add-ins and templates" is disabled</a></h3><p>Wizards in Access 2003 will not run if you set the macro security level to <b class="bterm">High</b> and disable <b class="bterm">Trust all installed add-ins and templates</b>.</p><p>To view the default settings or to change the macro security settings, on the <b class="ui">Tools</b> menu, point to <b class="ui">Macro</b>, and then click <b class="ui">Security</b>. On the <b class="ui">Security Level</b> tab, the default setting is <b class="ui">Medium</b>. On the <b class="ui">Trusted Publishers</b> tab, the <b class="ui">Trust all installed add-ins and templates</b> check box is selected by default.  With these default security settings, the wizards will run as expected.</p><p>If you change the security level to <b class="ui">High</b> and clear the <b class="ui">Trust all installed add-ins and templates</b> check box, the wizards will not run.</p><h3><a id="digisign" name="digisign">Database digitally signed with a beta version of Access appears to be unsigned
+
+ 
+</a></h3><p>When you open a database that was digitally signed in a beta version of Access 2003, there is no indication that the database has been digitally signed and the Visual Basic for Applications (VBA) project is locked. </p><p>To correct the problem, reapply the digital signature to the database in Access 2003, close the database, and reopen it.
+
+</p><h3><a id="Dir" name="Dir">The Dir function is blocked in sandbox mode</a></h3><p>The Dir function is blocked when the Microsoft Jet Expression Service is configured to run in sandbox mode. The function cannot be used in expressions, but it can be utilized in Visual Basic for Applications (VBA) code. </p><p>For more information about the functions that are blocked when Jet is configured to run in sandbox mode, see Access Help.</p><h2>Exporting, importing, and linking to data</h2><h3><a id="Link" name="Link">Linking to a SharePoint site</a></h3><p><b class="bterm">Linking to a list with a long name</b>
+
+</p><p>Access cannot link to a list on a site that is  running Microsoft Windows SharePoint Services if the name of the list exceeds 255 characters. Rename the list on the SharePoint site, making sure the name is not longer than 255 characters, and try linking again.</p><p><b class="bterm">Refreshing and requerying database objects that are linked to lists</b>
+
+</p><p>When you refresh a form that is bound to a table that is linked to a list on a SharePoint site, Access does not update the form with the latest data from the source. It just repaints the form. To get the latest data, close and reopen the form or use the <b class="ui">Requery</b> command.</p><h2>Using smart tags and themes</h2><h3><a id="Addsmarttag" name="Addsmarttag">Adding a smart tag to a table or view in an Access project</a></h3><p>The only way you can add a smart tag to a table or view in an Access project is by adding the <b class="ui">MS_SmartTags</b> extended property using Transact-SQL. The easiest way to add smart tags in a project is to add them to your forms, reports, and data access pages.</p><h3><a id="Selectsmarttag" name="Selectsmarttag">Selecting a smart tag from the Smart Tag property builder</a></h3><p>The <b class="ui">Smart Tag</b> property builder does not list all available smart tags. It lists only those whose actions are defined in Access.</p><h3><a id="ThemeReq" name="ThemeReq">Requirements for applying a theme to a form</a></h3><p>In Access 2003, you can apply a theme to a form if the following requirements are met:
+
+<ul><li>The operating system is Microsoft Windows XP SP1 or Microsoft Windows Server 2003.</li><li>You have enabled theming in Windows by selecting a theme other than the default theme.</li><li>You have enabled theming for forms in the database. </li></ul></p><h3><a id="TurnOff" name="TurnOff">Theming for forms is turned off in previous-version databases</a></h3><p>The option to apply themes is enabled by default in databases that are created by using Access 2003. To enable themes for forms in a database that was created by using Access 2002 or earlier, on the <b class="ui">Tools</b> menu, click <b class="ui">Options</b>, and on the <b class="ui">Forms/Reports</b> tab, select <b class="ui">Use Windows Themed Controls on Forms</b>.</p></body></html>
